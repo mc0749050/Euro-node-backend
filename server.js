@@ -11,7 +11,9 @@ const Port = process.env.PORT || 4000;
 // middleware
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:['https://euro-ecoo-fronted.vercel.app'], credentials:true,
+}));
 app.use(router);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
